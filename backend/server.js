@@ -1,12 +1,26 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const Contact = require("./models/Contact");
+const cors = require('cors');
 require("dotenv").config();
 
 const port = 3000
 const app = express();
 
 app.use(express.json());
+
+const allowedOrigins = [
+  'https://maryam-portfolio-website.vercel.app',
+  'http://localhost:3000',
+];
+
+app.use(cors({
+  origin: allowedOrigins,
+  methods: ['GET', 'POST', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+}));
+
+app.options('*', cors());
 
 mongoose
     .connect(process.env.MONGODB_URI)
