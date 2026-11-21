@@ -28,3 +28,5 @@ form.addEventListener("submit", async (event) => {
 
     document.getElementById("response").textContent = data.message;
 });
+
+document.getElementById("currentYear").textContent = new Date().getFullYear();
