@@ -578,24 +578,24 @@
 
             <div class="contact-form">
 
-                <form>
+                <form id="contactForm" method="Post">
 
                     <input
-                        type="text"
+                        type="text" id="name"
                         placeholder="Your Name"
                         required>
 
                     <input
-                        type="email"
+                        type="email" id="email"
                         placeholder="Your Email"
                         required>
 
                     <input
-                        type="text"
+                        type="text" id="subject"
                         placeholder="Subject">
 
                     <textarea
-                        rows="6"
+                        rows="6" id="message"
                         placeholder="Your Message"></textarea>
 
                     <button type="submit">
@@ -607,6 +607,8 @@
                     </button>
 
                 </form>
+
+                <p id="response" class="form-message"></p>
 
             </div>
 
